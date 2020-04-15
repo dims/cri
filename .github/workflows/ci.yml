@@ -28,3 +28,9 @@ jobs:
         run: |
           bash.exe -c "pwd && ./test/windows/test.sh"
         working-directory: ${{github.workspace}}\\src\\github.com\\containerd\\cri
+
+      - name: Upload containerd log file
+        uses: actions/upload-artifact@v1
+        with:
+          name: cadvisor.log
+          path: c:\\_artifacts\\containerd.log
